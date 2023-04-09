@@ -3,20 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>C语言-static关键字 | DUO&#39;s blog</title>
+  <title>晶体管基础 | DUO&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C语言-static关键字 当它用于函数定义或者用于代码块之外的变量声明时，static关键字用于修改标识符的链接属性，从external改为internal，但标识符发存储类型和作用域不受影响，用这种方式声明的函数或变量只能在声明它们的源文件中访问； 当它用于代码块内部的变量声明时，static关键字用于修改变量的存储类型，从自动变量修改为静态变量，但是变量的链接属性和作用域不受影响。用这种">
+  <meta name="description" content="信号失真分析1.大信号失真因信号的赋值过大，使得输入信号在正峰值或者负峰值的时候，会使得晶体管进入饱和区或者进入截止区；另一个原因是由于信号幅值过大，使得输入伏安特性曲线中的非线性部分完全显现出来，造成非线性失真。 2.饱和失真和截止失真如图：  当输出信号幅值超过电压时，使得集电极没有电流（基极也没有电流），发生截至失真；而当输出信号幅值为负值时（Uceq&lt;0.3v），发生饱和失真。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言-static关键字">
-<meta property="og:url" content="https://duo-1549910594.github.io/2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
+<meta property="og:title" content="晶体管基础">
+<meta property="og:url" content="https://duo-1549910594.github.io/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="DUO&#39;s blog">
-<meta property="og:description" content="C语言-static关键字 当它用于函数定义或者用于代码块之外的变量声明时，static关键字用于修改标识符的链接属性，从external改为internal，但标识符发存储类型和作用域不受影响，用这种方式声明的函数或变量只能在声明它们的源文件中访问； 当它用于代码块内部的变量声明时，static关键字用于修改变量的存储类型，从自动变量修改为静态变量，但是变量的链接属性和作用域不受影响。用这种">
+<meta property="og:description" content="信号失真分析1.大信号失真因信号的赋值过大，使得输入信号在正峰值或者负峰值的时候，会使得晶体管进入饱和区或者进入截止区；另一个原因是由于信号幅值过大，使得输入伏安特性曲线中的非线性部分完全显现出来，造成非线性失真。 2.饱和失真和截止失真如图：  当输出信号幅值超过电压时，使得集电极没有电流（基极也没有电流），发生截至失真；而当输出信号幅值为负值时（Uceq&lt;0.3v），发生饱和失真。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-25T07:17:43.000Z">
-<meta property="article:modified_time" content="2023-04-09T09:00:41.050Z">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220118095210.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220118100138.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226192918.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226193544.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226193656.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226194451.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226194742.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226195826.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226202328.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226202650.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226203701.png">
+<meta property="og:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226203824.png">
+<meta property="article:published_time" content="2022-01-18T01:37:43.000Z">
+<meta property="article:modified_time" content="2023-04-09T09:00:37.400Z">
 <meta property="article:author" content="DUO">
-<meta property="article:tag" content="C语言-static关键字">
+<meta property="article:tag" content="晶体管基础">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220118095210.png">
   
     <link rel="alternative" href="/atom.xml" title="DUO&#39;s blog" type="application/atom+xml">
   
@@ -261,11 +274,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-C语言-static关键字" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-晶体管基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
-      <time datetime="2021-08-25T07:17:43.000Z" itemprop="datePublished">2021-08-25</time>
+      <a href="/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/" class="article-date">
+      <time datetime="2022-01-18T01:37:43.000Z" itemprop="datePublished">2022-01-18</time>
 </a>
     </div>
   
@@ -278,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      C语言-static关键字
+      晶体管基础
     </h1>
   
 
@@ -289,7 +302,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/" rel="tag">C语言-static关键字</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/" rel="tag">晶体管基础</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -301,10 +314,31 @@
           
         <meta name="referrer" content="no-referrer">
 
-<h1 id="C语言-static关键字"><a href="#C语言-static关键字" class="headerlink" title="C语言-static关键字"></a>C语言-static关键字</h1><ul>
-<li>当它用于函数定义或者用于代码块之外的变量声明时，static关键字用于修改标识符的链接属性，从external改为internal，但标识符发存储类型和作用域不受影响，用这种方式声明的函数或变量只能在声明它们的源文件中访问；</li>
-<li>当它用于代码块内部的变量声明时，static关键字用于修改变量的存储类型，从自动变量修改为静态变量，但是变量的链接属性和作用域不受影响。用这种方式声明的变量在程序执行之前创建，并在程序的整个执行期间一直存在，而不是每次在代码块开始执行时创建，在代码块执行完毕后销毁。</li>
-</ul>
+<h1 id="信号失真分析"><a href="#信号失真分析" class="headerlink" title="信号失真分析"></a>信号失真分析</h1><h2 id="1-大信号失真"><a href="#1-大信号失真" class="headerlink" title="1.大信号失真"></a>1.大信号失真</h2><p>因信号的赋值过大，使得输入信号在正峰值或者负峰值的时候，会使得晶体管进入饱和区或者进入截止区；另一个原因是由于信号幅值过大，使得输入伏安特性曲线中的非线性部分完全显现出来，造成非线性失真。</p>
+<h2 id="2-饱和失真和截止失真"><a href="#2-饱和失真和截止失真" class="headerlink" title="2.饱和失真和截止失真"></a>2.饱和失真和截止失真</h2><p>如图：</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220118095210.png"></p>
+<p>当输出信号幅值超过电压时，使得集电极没有电流（基极也没有电流），发生截至失真；而当输出信号幅值为负值时（Uceq&lt;0.3v），发生饱和失真。</p>
+<p><strong>失真电压裕度</strong>：我们把静态集电极-射极电压到截止失真的电压差值称为截至失真电压裕度；到饱和失真的电压差值称为饱和电压裕度，两者的最小值称为失真电压裕度。<strong>注意</strong>：不一定是饱和电压裕度一定小于截止电压裕度，这和静态工作点有关，所以要根据具体电路来分析，看是先发生什么类型的失真。</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220118100138.png"></p>
+<p>可以根据上图加深对截止失真和饱和失真的理解。</p>
+<h2 id="3-T型偏置电路"><a href="#3-T型偏置电路" class="headerlink" title="3.T型偏置电路"></a>3.T型偏置电路</h2><p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226192918.png" alt="T型偏置电路"></p>
+<p>分析T偏置电路：静态通路分析：</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226193544.png"></p>
+<p>动态通路分析：</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226193656.png"></p>
+<p>可知：与两电阻分压电路相比，T型偏置电路更加灵活；当要求基极电压较小切输入电阻较大的时候，电阻分压电路则需要更大的电阻，而T型偏置电路则是两电阻并联加上一个电阻值，同时基极电压任然是两电阻分压值，输入电阻与基极电压相互独立；同时图中的电容C4（去耦电容），可以减少电源电压的噪声对输入端的影响。</p>
+<h2 id="4-MOSFET"><a href="#4-MOSFET" class="headerlink" title="4.MOSFET"></a>4.MOSFET</h2><p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226194451.png"><br>由于MOSFET的绝缘栅结构，没有输入电流，所以只有转移伏安特性曲线和输出伏安特性曲线，所以求解电路状态主要在于Ugs，Id；</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226194742.png"></p>
+<p>一般阈值电压（开启电压），和K值一般都会给。<br>工作状态分类：</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226195826.png"></p>
+<h2 id="5-电流镜基本原理"><a href="#5-电流镜基本原理" class="headerlink" title="5.电流镜基本原理"></a>5.电流镜基本原理</h2><p>电流镜的基本原理其核心是两个基极连在一起，两个发射极连在一起，以迫使两者具有相同的Ube，以使其Ib相等，进而保证Ic相等。</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226202328.png"></p>
+<p>通过对晶体管的性质可得：</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226202650.png"></p>
+<p>但是实际的电流镜的输出并不是按照比例预期的，和理论计算存在较大的误差，原因在于：厄利电压。</p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226203701.png"></p>
+<p><img src="https://gitee.com/liang-xiqing/Picgo/raw/master/img/20220226203824.png"></p>
+<p>输出端的初始电压和Uce对集电极的电流（输出电流）都有影响。对于一个确定的伏安特性曲线，可以根据厄利电压和集电极射极饱和电压以及理想输出集电极电流，来确定实际的输出电流。</p>
 
       
       
@@ -350,13 +384,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/">C语言-static关键字</a></p>
+        <p><span>本文标题:</span><a href="/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/">晶体管基础</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2021年08月25日 - 15时17分</p>
+        <p><span>发布时间:</span>2022年01月18日 - 09时37分</p>
         <p><span>最后更新:</span>2023年04月09日 - 17时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/" title="C语言-static关键字">https://duo-1549910594.github.io/2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://duo-1549910594.github.io/2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/" title="晶体管基础">https://duo-1549910594.github.io/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://duo-1549910594.github.io/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -369,18 +403,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/09/05/C%E8%AF%AD%E8%A8%80-%E4%BD%8D%E7%9A%84%E6%93%8D%E7%BA%B5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          C语言-位的操纵
+          运算放大器
         
       </div>
     </a>
   
   
-    <a href="/2021/08/24/C%E8%AF%AD%E8%A8%80-typedef/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C语言-typedef</div>
+    <a href="/2021/09/20/C%E8%AF%AD%E8%A8%80-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C语言-左值和右值</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -391,7 +425,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.</span> <span class="toc-text">C语言-static关键字</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%B1%E7%9C%9F%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">信号失真分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%A4%A7%E4%BF%A1%E5%8F%B7%E5%A4%B1%E7%9C%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1.大信号失真</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%A5%B1%E5%92%8C%E5%A4%B1%E7%9C%9F%E5%92%8C%E6%88%AA%E6%AD%A2%E5%A4%B1%E7%9C%9F"><span class="toc-number">1.2.</span> <span class="toc-text">2.饱和失真和截止失真</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-T%E5%9E%8B%E5%81%8F%E7%BD%AE%E7%94%B5%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text">3.T型偏置电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-MOSFET"><span class="toc-number">1.4.</span> <span class="toc-text">4.MOSFET</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%B5%E6%B5%81%E9%95%9C%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">5.电流镜基本原理</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -460,13 +494,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2021/09/05/C%E8%AF%AD%E8%A8%80-%E4%BD%8D%E7%9A%84%E6%93%8D%E7%BA%B5/" title="上一篇: C语言-位的操纵">
+            <a href="/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/" title="上一篇: 运算放大器">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2021/08/24/C%E8%AF%AD%E8%A8%80-typedef/" title="下一篇: C语言-typedef">
+            <a href="/2021/09/20/C%E8%AF%AD%E8%A8%80-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC/" title="下一篇: C语言-左值和右值">
                 <i class="fa fa-angle-right"></i>
             </a>
         
