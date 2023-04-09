@@ -4,6 +4,82 @@
   
     
     <entry>
+      <title>C语言-左值和右值</title>
+      <link href="2021/09/20/C%E8%AF%AD%E8%A8%80-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC/"/>
+      <url>2021/09/20/C%E8%AF%AD%E8%A8%80-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer"" content="no-referrer"><h1 id="C语言-左值和右值"><a href="#C语言-左值和右值" class="headerlink" title="C语言-左值和右值"></a>C语言-左值和右值</h1><p><strong>左值：</strong>可以出现在赋值符号左边的东西；</p><p><strong>右值：</strong>可以出现在赋值符号右边的东西。</p><p>注意：左值并不是只能是变量，也可以是表达式，如：<code>a[b+10] = 0;</code>是否可以作为左值，主要在于赋值符号左边是否标识了一特定的位置。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C语言-左值和右值 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言-位的操纵</title>
+      <link href="2021/09/05/C%E8%AF%AD%E8%A8%80-%E4%BD%8D%E7%9A%84%E6%93%8D%E7%BA%B5/"/>
+      <url>2021/09/05/C%E8%AF%AD%E8%A8%80-%E4%BD%8D%E7%9A%84%E6%93%8D%E7%BA%B5/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer"" content="no-referrer"><h1 id="C语言-位的操纵"><a href="#C语言-位的操纵" class="headerlink" title="C语言-位的操纵"></a>C语言-位的操纵</h1><p>表达式假定变量bit_number为一整型值，它的范围是从0至整型值的位数减1，并且整型值的位从右向左计数；</p><p>第一个例子：把指定的位设置为1：</p><p><code>vuale = vuale | 1 &lt;&lt; bit_number;</code></p><p>写一个例子：把指定的位清0：</p><p><code>vuale = vuale &amp; ~(1 &lt;&lt; bit_number);</code></p><p>对指定的位进行测试，如果该位已经被设置为1，则表达式的结果为非零值：</p><p><code>vuale &amp; 1 &lt;&lt; bit_number;</code></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C语言-位的操纵 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言-static关键字</title>
+      <link href="2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+      <url>2021/08/25/C%E8%AF%AD%E8%A8%80-static%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer"" content="no-referrer"><h1 id="C语言-static关键字"><a href="#C语言-static关键字" class="headerlink" title="C语言-static关键字"></a>C语言-static关键字</h1><ul><li>当它用于函数定义或者用于代码块之外的变量声明时，static关键字用于修改标识符的链接属性，从external改为internal，但标识符发存储类型和作用域不受影响，用这种方式声明的函数或变量只能在声明它们的源文件中访问；</li><li>当它用于代码块内部的变量声明时，static关键字用于修改变量的存储类型，从自动变量修改为静态变量，但是变量的链接属性和作用域不受影响。用这种方式声明的变量在程序执行之前创建，并在程序的整个执行期间一直存在，而不是每次在代码块开始执行时创建，在代码块执行完毕后销毁。</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C语言-static关键字 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言-typedef</title>
+      <link href="2021/08/24/C%E8%AF%AD%E8%A8%80-typedef/"/>
+      <url>2021/08/24/C%E8%AF%AD%E8%A8%80-typedef/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer"" content="no-referrer"><h1 id="C语言-typedef"><a href="#C语言-typedef" class="headerlink" title="C语言-typedef"></a>C语言-typedef</h1><p>typedef允许为各种数据类型定义新名字，其声明写法和普通的声明基本相同，只要把typedef这个关键字放在声明的前面即可。</p><p>例如：<code>typedef char *ptr_to_char</code>这个声明将ptr_to_char声明为一个指向字符的指针</p><p><code>ptr_to_char a;</code>声明a是一个指向字符的指针，使用typedef声明类型可以减少使声明变得又臭又长的危险。</p><p>注意：创建新的类型名应该用typedef而不是#define，后者无法正确地处理指针类型，例如：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> d_ptr_to_char char*</span></span><br><span class="line">d_ptr_to_char a,b;</span><br></pre></td></tr></table></figure><p>这里正确地声明了a，但是b却是被声明为一个字符。在定义更为复杂的类型名字时，如函数指针或指向数组的指针，使用typedef更为合适。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C语言-typedef </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C语言的基本概念</title>
       <link href="2021/05/30/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
       <url>2021/05/30/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
