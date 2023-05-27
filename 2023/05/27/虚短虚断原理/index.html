@@ -3,25 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>运算放大器 | DUO&#39;s blog</title>
+  <title>DUO&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="运算放大器1.噪声运放的噪声来源有很多，如：热噪声，散粒噪声等等；但是最为常见的噪声根源有两类：一类是1&#x2F;f噪声，其电能力密度曲线随着频率的上升而下降；一类产生白噪声，或者叫平坦噪声，其电能力密度曲线是一条直线，与频率无关。 两者的电能力密度图如图所示：在一定的频率范围内，我们都可以通过上图计算出两类噪声的有效值。 两种噪声有效值的计算方法，其重点在于得到C和K两个值。可以根据厂家给的数据手册">
+  <meta name="description" content="虚短虚断原理对于虚短虚断原理，其实运放本身是不能理解的，这只是我们分析电路时根据运放特性而总结的一种电路分析的方法。 虚短的来源前提：运放在深度负反馈，且输出没有饱和的情况下运放遵循以下原则：  （1）输入端发生变化后，运放需要等待一定时间才能对输出实施改变。即输出动作会滞后输入一定的时间，此时间被称为延迟时间； （2）它将两个输入端电位实施减法，得到$$u_{id} &#x3D; u_{+} - u_{-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="运算放大器">
-<meta property="og:url" content="https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/index.html">
+<meta property="og:title" content="DUO&#39;s blog">
+<meta property="og:url" content="https://duo-1549910594.github.io/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="DUO&#39;s blog">
-<meta property="og:description" content="运算放大器1.噪声运放的噪声来源有很多，如：热噪声，散粒噪声等等；但是最为常见的噪声根源有两类：一类是1&#x2F;f噪声，其电能力密度曲线随着频率的上升而下降；一类产生白噪声，或者叫平坦噪声，其电能力密度曲线是一条直线，与频率无关。 两者的电能力密度图如图所示：在一定的频率范围内，我们都可以通过上图计算出两类噪声的有效值。 两种噪声有效值的计算方法，其重点在于得到C和K两个值。可以根据厂家给的数据手册">
+<meta property="og:description" content="虚短虚断原理对于虚短虚断原理，其实运放本身是不能理解的，这只是我们分析电路时根据运放特性而总结的一种电路分析的方法。 虚短的来源前提：运放在深度负反馈，且输出没有饱和的情况下运放遵循以下原则：  （1）输入端发生变化后，运放需要等待一定时间才能对输出实施改变。即输出动作会滞后输入一定的时间，此时间被称为延迟时间； （2）它将两个输入端电位实施减法，得到$$u_{id} &#x3D; u_{+} - u_{-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/images/20220304152455.png">
-<meta property="og:image" content="https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/images/20220304152728.png">
-<meta property="og:image" content="https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/images/20220304153558.png">
-<meta property="og:image" content="https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/images/20220304161218.png">
-<meta property="article:published_time" content="2022-03-04T07:18:43.000Z">
-<meta property="article:modified_time" content="2023-04-09T09:17:24.517Z">
+<meta property="og:image" content="https://duo-1549910594.github.io/.io//20230527124455.png">
+<meta property="og:image" content="https://duo-1549910594.github.io/.io//20230527124550.png">
+<meta property="article:published_time" content="2023-05-27T05:08:49.095Z">
+<meta property="article:modified_time" content="2023-05-27T05:09:13.128Z">
 <meta property="article:author" content="DUO">
-<meta property="article:tag" content="运算放大器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/images/20220304152455.png">
+<meta name="twitter:image" content="https://duo-1549910594.github.io/.io//20230527124455.png">
   
     <link rel="alternative" href="/atom.xml" title="DUO&#39;s blog" type="application/atom+xml">
   
@@ -266,11 +263,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-运算放大器" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-虚短虚断原理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/" class="article-date">
-      <time datetime="2022-03-04T07:18:43.000Z" itemprop="datePublished">2022-03-04</time>
+      <a href="/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/" class="article-date">
+      <time datetime="2023-05-27T05:08:49.095Z" itemprop="datePublished">2023-05-27</time>
 </a>
     </div>
   
@@ -279,46 +276,29 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      运算放大器
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/" rel="tag">运算放大器</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <meta name="referrer" content="no-referrer">
-
-<h1 id="运算放大器"><a href="#运算放大器" class="headerlink" title="运算放大器"></a>运算放大器</h1><h2 id="1-噪声"><a href="#1-噪声" class="headerlink" title="1.噪声"></a>1.噪声</h2><p>运放的噪声来源有很多，如：热噪声，散粒噪声等等；但是最为常见的噪声根源有两类：一类是1/f噪声，其电能力密度曲线随着频率的上升而下降；一类产生白噪声，或者叫平坦噪声，其电能力密度曲线是一条直线，与频率无关。</p>
-<p>两者的电能力密度图如图所示：<br><img src="images/20220304152455.png" alt="电能力密度图"><br>在一定的频率范围内，我们都可以通过上图计算出两类噪声的有效值。</p>
-<p>两种噪声有效值的计算方法，其重点在于得到C和K两个值。<br><img src="images/20220304152728.png"><br>可以根据厂家给的数据手册来查找C和K的值，噪声频率较小的时候1/f作用较为明显；噪声频率较大的时候白噪声作用较为明显。</p>
-<p><strong>K的确定：</strong>（1）读图法，读厂家给的数据手册；（2）数据法，多数数据手册会在指标表里以en为标示给出；</p>
-<p><strong>C的确定：</strong>（1）曲线涵盖1Hz，通过读图得到1Hz时的噪声值，然后有和噪声值和白噪声值可以算出1/f的C的值；（2）曲线不涵盖1Hz：<img src="images/20220304153558.png"><br>（3）通过转角频率，有些厂家会给出转角频率，转角频率就是处于这个频率下，1/f噪声电能力密度等于白噪声电能力密度等于K，再根据1/f噪声的定义可以得出C。</p>
-<p><strong>噪声有效值与峰峰值的关系:</strong> 峰峰值等于有效值的6.6倍。</p>
-<p><strong>实际运放噪声的计算：</strong> 实际运放的噪声来源有电压源噪声，电流源噪声，电阻热噪声。<br>方法如下：<br>（1） 获得等效带宽 fb，确定 fa，可能是 0.1Hz 或者 0.01Hz。 </p>
-<p>（2） 根据前述方法，结合带宽计算运放等效输入噪声电压 UN_I；</p>
-<p>（3） 结合带宽计算各个电阻的热噪声 UN_Ri；（式 2-18） </p>
-<p>（4） 查找数据手册，获得等效输入电流噪声的关键参数 CI 和 KI，结合带宽计算等效输入电流噪声 IN_1 和 IN_2； </p>
-<p>（5） 以上述 3 类共 7 个源，分别计算在输出端的结果 UOm，m 代表不同的源。其中上标 O 代表该噪声源在运放输出端呈现的噪声电压有效值。</p>
-<p> (6) 对各个 UOm实施平方式叠加，即为最终输出噪声。</p>
-<p><strong>电阻的热噪声计算：</strong> 电阻噪声计算较为复杂，包含热噪声、接触噪声和散粒噪声等。在特殊电路比如音响放大电路中，要考虑很多问题来减少噪声，比如降低均值电流、增大电阻体积等。但是在运放电路中，一般仅考虑电阻的热噪声。<br><img src="images/20220304161218.png"></p>
+        <h1 id="虚短虚断原理"><a href="#虚短虚断原理" class="headerlink" title="虚短虚断原理"></a>虚短虚断原理</h1><p>对于虚短虚断原理，其实运放本身是不能理解的，这只是我们分析电路时根据运放特性而总结的一种电路分析的方法。</p>
+<h2 id="虚短的来源"><a href="#虚短的来源" class="headerlink" title="虚短的来源"></a>虚短的来源</h2><p>前提：运放在深度负反馈，且输出没有饱和的情况下<br>运放遵循以下原则：</p>
+<ul>
+<li>（1）输入端发生变化后，运放需要等待一定时间才能对输出实施改变。即输出动作会滞后输入一定的时间，此时间被称为延迟时间；</li>
+<li>（2）它将两个输入端电位实施减法，得到$$u_{id} = u_{+} - u_{-}$$,在内部实施乘法运算，得到期望输出值$$u_{id}A_{uo}$$;</li>
+<li>（3）未达到期望输出值，运放以压摆率向目标前进；</li>
+<li>（4）如果运放的输出端达到电压但仍未达到期望输出值，则会停留在最大输出电压处。</li>
+<li>（5）若已经达到期望输出值，则运放的输出端就稳定不变了。</li>
+</ul>
+<p>这里以2倍同向比例放大进行解释：<br>假设开环电压增益为100000，延迟时间为1us，压摆率为SR = 1V/us，运放供电电压为±5V，最大输出电压为±4.5V。</p>
+<p><img src="/.io//20230527124455.png"></p>
+<p><img src="/.io//20230527124550.png"></p>
+<p>变化过程如下：</p>
+<ul>
+<li>（1）输入信号（绿色线）在1us处从0V变为2V，形成阶跃输入u1；1us~2us之间，运放的输出端电压（红色线）uo没有变化（1us延迟时间）</li>
+<li>（2）2us处，运放开始工作，此时正负输入端差值为2v，故目标输出电压为200000V，故此时以压摆率向目标输出电压前进；</li>
+<li>（3）当输出电压增大时，负输入端电压也在增大，此时正负输入端差值减小，期望输出电压也在下降，但仍然很大，远大于电源电压5V；</li>
+<li>（4）正输入端一直为2V，负输入端不断接近2V，当<br>$$(u_{+} - u_{-})<em>A_{uo} = u_{o}$$<br>即：<br>$$(2V - 0.5u_{o})<em>100000 = u_{o}$$<br>可以计算出此时输出电压为3.9999200016V时，运放发现自己达到了期望输出值，此时不在前进保持稳定，**这时：虚短成立</em></em> 。</li>
+</ul>
+<h2 id="虚断的来源"><a href="#虚断的来源" class="headerlink" title="虚断的来源"></a>虚断的来源</h2><p>虚断其实是由于运放的输入阻抗较大，大多数情况下是成立的，只有当外部电阻接近运放输入电阻时，或者运放输入管脚外部流过的电流，接近或者超过运放输入端的微小电压时，虚断才失效。</p>
 
       
       
@@ -364,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/">运算放大器</a></p>
+        <p><span>本文标题:</span><a href="/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/"></a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2022年03月04日 - 15时18分</p>
-        <p><span>最后更新:</span>2023年04月09日 - 17时17分</p>
+        <p><span>发布时间:</span>2023年05月27日 - 13时08分</p>
+        <p><span>最后更新:</span>2023年05月27日 - 13时09分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/" title="运算放大器">https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://duo-1549910594.github.io/2022/03/04/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/" title="">https://duo-1549910594.github.io/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://duo-1549910594.github.io/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -383,18 +363,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/04/17/%E6%BB%A4%E6%B3%A2%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          滤波器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">晶体管基础</div>
+    <a href="/2022/04/17/%E6%BB%A4%E6%B3%A2%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">滤波器</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -405,7 +376,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">运算放大器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%99%AA%E5%A3%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1.噪声</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">虚短虚断原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E7%9F%AD%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-number">1.1.</span> <span class="toc-text">虚短的来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%96%AD%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-number">1.2.</span> <span class="toc-text">虚断的来源</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -474,13 +445,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2022/04/17/%E6%BB%A4%E6%B3%A2%E5%99%A8/" title="上一篇: 滤波器">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2022/01/18/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/" title="下一篇: 晶体管基础">
+            <a href="/2022/04/17/%E6%BB%A4%E6%B3%A2%E5%99%A8/" title="下一篇: 滤波器">
                 <i class="fa fa-angle-right"></i>
             </a>
         
