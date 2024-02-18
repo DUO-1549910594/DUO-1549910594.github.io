@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>STM32串口通信 | DUO&#39;s blog</title>
+  <title>DUO&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="STM32串口通信一.STM32串口常用的寄存器和库函数1.常用的寄存器 USART_SR状态寄存：串口通信的状态数据 USART_DR数据寄存器：读写数据 USART_BRR波特率寄存器：配置波特率 USART_CR1&#x2F;2&#x2F;3控制寄存器：发送接收使能以及一些相关的中断使能  波特率计算方法：Tx&#x2F;Rx波特率 &#x3D; f&#x2F;(16*USARTDIV) {假设串口1要设置为115200的波特率，而PC">
+  <meta name="description" content="开学快乐假期余额不足嘞，给你摆烂卡：天天摆烂，天天放假！（doge）  最后一个学期了，希望没早八不熬夜，少点压力少点烦恼，天天开心嘞！You always have my back! –to lzh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STM32串口通信">
-<meta property="og:url" content="https://duo-1549910594.github.io/2021/10/05/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/index.html">
+<meta property="og:title" content="DUO&#39;s blog">
+<meta property="og:url" content="https://duo-1549910594.github.io/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/index.html">
 <meta property="og:site_name" content="DUO&#39;s blog">
-<meta property="og:description" content="STM32串口通信一.STM32串口常用的寄存器和库函数1.常用的寄存器 USART_SR状态寄存：串口通信的状态数据 USART_DR数据寄存器：读写数据 USART_BRR波特率寄存器：配置波特率 USART_CR1&#x2F;2&#x2F;3控制寄存器：发送接收使能以及一些相关的中断使能  波特率计算方法：Tx&#x2F;Rx波特率 &#x3D; f&#x2F;(16*USARTDIV) {假设串口1要设置为115200的波特率，而PC">
+<meta property="og:description" content="开学快乐假期余额不足嘞，给你摆烂卡：天天摆烂，天天放假！（doge）  最后一个学期了，希望没早八不熬夜，少点压力少点烦恼，天天开心嘞！You always have my back! –to lzh">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-05T11:41:43.000Z">
-<meta property="article:modified_time" content="2023-04-09T09:34:13.674Z">
+<meta property="og:image" content="https://duo-1549910594.github.io/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/images/20240218083339.jpg">
+<meta property="article:published_time" content="2024-02-18T00:41:35.205Z">
+<meta property="article:modified_time" content="2024-02-18T00:55:59.280Z">
 <meta property="article:author" content="DUO">
-<meta property="article:tag" content="STM32串口通信">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://duo-1549910594.github.io/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/images/20240218083339.jpg">
   
     <link rel="alternative" href="/atom.xml" title="DUO&#39;s blog" type="application/atom+xml">
   
@@ -261,11 +262,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-STM32串口通信" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-开学快乐" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/10/05/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="article-date">
-      <time datetime="2021-10-05T11:41:43.000Z" itemprop="datePublished">2021-10-05</time>
+      <a href="/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/" class="article-date">
+      <time datetime="2024-02-18T00:41:35.205Z" itemprop="datePublished">2024-02-18</time>
 </a>
     </div>
   
@@ -274,72 +275,12 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      STM32串口通信
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" rel="tag">STM32串口通信</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <meta name="referrer" content="no-referrer">
-
-<h1 id="STM32串口通信"><a href="#STM32串口通信" class="headerlink" title="STM32串口通信"></a>STM32串口通信</h1><h2 id="一-STM32串口常用的寄存器和库函数"><a href="#一-STM32串口常用的寄存器和库函数" class="headerlink" title="一.STM32串口常用的寄存器和库函数"></a>一.STM32串口常用的寄存器和库函数</h2><h3 id="1-常用的寄存器"><a href="#1-常用的寄存器" class="headerlink" title="1.常用的寄存器"></a>1.常用的寄存器</h3><ul>
-<li>USART_SR状态寄存：串口通信的状态数据</li>
-<li>USART_DR数据寄存器：读写数据</li>
-<li>USART_BRR波特率寄存器：配置波特率</li>
-<li>USART_CR1/2/3控制寄存器：发送接收使能以及一些相关的中断使能</li>
-</ul>
-<p><strong>波特率计算方法：</strong>Tx/Rx波特率 = f/(16*USARTDIV) {假设串口1要设置为115200的波特率，而PCLK2的时钟为72M，这样：波特率 = 72000000/(115200 x 16) = 39.0625}</p>
-<p><strong>如何配置整数和小数部分：</strong>整数部分DIV_Mantissa = 39 = 0x27(直接设置为16进制)</p>
-<p>​                                              小数部分DIV_Mantissa = 16*0.0625 = 1 = 0x01;(乘以16再转换)</p>
-<h3 id="2-串口常用的库函数"><a href="#2-串口常用的库函数" class="headerlink" title="2.串口常用的库函数"></a>2.串口常用的库函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Init</span><span class="params">()</span></span>;<span class="comment">//串口初始化：波特率，数据字长，奇偶校验，硬件流控以及收发使能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Cmd</span><span class="params">()</span></span>;<span class="comment">//使能串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ITConfig</span><span class="params">()</span></span>;<span class="comment">//使能相关中断</span></span><br><span class="line"></span><br><span class="line">操作DR寄存器</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_SendData</span><span class="params">()</span></span>;<span class="comment">//发送数据到串口，DR</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ReceiveData</span><span class="params">()</span></span>;<span class="comment">//接受数据，从DR读取接受到的数据</span></span><br><span class="line"></span><br><span class="line">对SR寄存器进行读</span><br><span class="line"><span class="function">FlagStatus <span class="title">USART_GetFlagStatus</span><span class="params">()</span></span>;<span class="comment">//获取状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearFlag</span><span class="params">()</span></span>;<span class="comment">//清除状态标志位</span></span><br><span class="line"><span class="function">ITStatus <span class="title">USART_GetITStatus</span><span class="params">()</span></span>;<span class="comment">//获取中断标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearITPendingBit</span><span class="params">()</span></span>;<span class="comment">//清除中断，状态标志位</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-串口配置的一般步骤"><a href="#3-串口配置的一般步骤" class="headerlink" title="3.串口配置的一般步骤"></a>3.串口配置的一般步骤</h3><ul>
-<li><p>串口时钟使能，GPIO时钟使能：RCC_APB2PeriClockCmd();</p>
-</li>
-<li><p>串口复位：USART_DeInit();这一步不是必须的；</p>
-</li>
-<li><p>GPIO端口模式设置（设置为复用）：GPIO_Init();模式设置(查表)</p>
-</li>
-<li><p>串口参数初始化：USART_Init();</p>
-</li>
-<li><p>开启中断并且初始化NVIC（需要中断的话）</p>
-<p>NVIC_Init();</p>
-<p>USART_ITConfig();</p>
-</li>
-<li><p>使能串口：USART_Cmd();</p>
-</li>
-<li><p>编写中断处理函数：USARTx_IRQHandler();</p>
-</li>
-<li><p>串口数据收发：</p>
-<p>void USART_SendData();</p>
-<p>uint16_t USART_ReceiveData();</p>
-</li>
-<li><p>串口传输状态获取：</p>
-<p>FlagStatus USART_GetFlagStatus();</p>
-<p>void USART_ClearITPendingBit();//清除中断，状态标志位</p>
-</li>
-</ul>
-<h3 id="4-具体代码"><a href="#4-具体代码" class="headerlink" title="4.具体代码"></a>4.具体代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">uart_init</span><span class="params">(u32 bound)</span></span>&#123;</span><br><span class="line">  <span class="comment">//GPIO端口设置</span></span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	USART_InitTypeDef USART_InitStructure;</span><br><span class="line">	NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">	 </span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);	<span class="comment">//使能USART1，GPIOA时钟</span></span><br><span class="line">  </span><br><span class="line">	<span class="comment">//USART1_TX   GPIOA.9</span></span><br><span class="line">  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9</span></span><br><span class="line">  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	<span class="comment">//复用推挽输出</span></span><br><span class="line">  GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.9</span></span><br><span class="line">   </span><br><span class="line">  <span class="comment">//USART1_RX	  GPIOA.10初始化</span></span><br><span class="line">  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10</span></span><br><span class="line">  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">  GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.10  </span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//Usart1 NVIC 配置（）涉及中断才写</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;</span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=<span class="number">3</span> ;<span class="comment">//抢占优先级3</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">3</span>;		<span class="comment">//子优先级3</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			<span class="comment">//IRQ通道使能</span></span><br><span class="line">  NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据指定的参数初始化VIC寄存器</span></span><br><span class="line">  </span><br><span class="line">   <span class="comment">//USART 初始化设置</span></span><br><span class="line"></span><br><span class="line">	USART_InitStructure.USART_BaudRate = bound;<span class="comment">//串口波特率</span></span><br><span class="line">	USART_InitStructure.USART_WordLength = USART_WordLength_8b;<span class="comment">//字长为8位数据格式</span></span><br><span class="line">	USART_InitStructure.USART_StopBits = USART_StopBits_1;<span class="comment">//一个停止位</span></span><br><span class="line">	USART_InitStructure.USART_Parity = USART_Parity_No;<span class="comment">//无奇偶校验位</span></span><br><span class="line">	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;<span class="comment">//无硬件数据流控制</span></span><br><span class="line">	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	<span class="comment">//收发模式</span></span><br><span class="line"></span><br><span class="line">  USART_Init(USART1, &amp;USART_InitStructure); <span class="comment">//初始化串口1</span></span><br><span class="line">  USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);<span class="comment">//开启串口接受中断</span></span><br><span class="line">  USART_Cmd(USART1, ENABLE);                    <span class="comment">//使能串口1 </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span>                	<span class="comment">//串口1中断服务程序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 Res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE))  <span class="comment">//接收中断(接收到的数据必须是0x0d 0x0a结尾)</span></span><br><span class="line">	&#123;</span><br><span class="line">		Res =USART_ReceiveData(USART1);	<span class="comment">//读取接收到的数据</span></span><br><span class="line">		USART_SendData(USART1,Res);</span><br><span class="line">	&#125;   		 </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"> </span>&#123;		  </span><br><span class="line">	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); <span class="comment">//设置NVIC中断分组2:2位抢占优先级，2位响应优先级</span></span><br><span class="line">	uart_init(<span class="number">115200</span>);	 <span class="comment">//串口初始化为115200</span></span><br><span class="line"> 	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="开学快乐"><a href="#开学快乐" class="headerlink" title="开学快乐"></a>开学快乐</h1><p>假期余额不足嘞，给你摆烂卡：天天摆烂，天天放假！（doge）</p>
+<p><img src="images/20240218083339.jpg"></p>
+<p>最后一个学期了，希望没早八不熬夜，少点压力少点烦恼，天天开心嘞！<br><em>You always have my back! –to lzh</em></p>
 
       
       
@@ -385,13 +326,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2021/10/05/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">STM32串口通信</a></p>
+        <p><span>本文标题:</span><a href="/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/"></a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2021年10月05日 - 19时41分</p>
-        <p><span>最后更新:</span>2023年04月09日 - 17时34分</p>
+        <p><span>发布时间:</span>2024年02月18日 - 08时41分</p>
+        <p><span>最后更新:</span>2024年02月18日 - 08时55分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/10/05/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" title="STM32串口通信">https://duo-1549910594.github.io/2021/10/05/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://duo-1549910594.github.io/2021/10/05/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/" title="">https://duo-1549910594.github.io/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://duo-1549910594.github.io/2024/02/18/%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -404,18 +345,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/10/06/IIC%E9%80%9A%E4%BF%A1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          IIC通信
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/09/20/C%E8%AF%AD%E8%A8%80-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C语言-左值和右值</div>
+    <a href="/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -426,7 +358,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.</span> <span class="toc-text">STM32串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-STM32%E4%B8%B2%E5%8F%A3%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8C%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">一.STM32串口常用的寄存器和库函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.常用的寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%B2%E5%8F%A3%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.串口常用的库函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%B2%E5%8F%A3%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.串口配置的一般步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.具体代码</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%AD%A6%E5%BF%AB%E4%B9%90"><span class="toc-number">1.</span> <span class="toc-text">开学快乐</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -495,13 +427,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2021/10/06/IIC%E9%80%9A%E4%BF%A1/" title="上一篇: IIC通信">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2021/09/20/C%E8%AF%AD%E8%A8%80-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC/" title="下一篇: C语言-左值和右值">
+            <a href="/2023/05/27/%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD%E5%8E%9F%E7%90%86/" title="下一篇: ">
                 <i class="fa fa-angle-right"></i>
             </a>
         
